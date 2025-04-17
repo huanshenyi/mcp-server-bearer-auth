@@ -7,6 +7,7 @@
 	"name": "mcp-server-bearer-auth",
 	"main": "src/index.ts",
 	"compatibility_date": "2025-03-10",
+	"compatibility_flags": ["nodejs_compat"],
 	"migrations": [
 		{
 			"new_sqlite_classes": [
@@ -26,9 +27,17 @@
 	"observability": {
 		"enabled": true
 	},
-	"assets": {
-		"directory": "./static/",
-		"binding": "ASSETS"
+	"kv_namespaces": [
+		{
+			"binding": "OAUTH_KV",
+		    "id": "{OAUTH_KV}"
+		}
+	],
+	"ai": {
+		"binding": "AI"
+	},
+	"dev": {
+		"port": 8788
 	}
 	/**
 	 * Smart Placement
